@@ -8,12 +8,5 @@ export function getRandomPerson() {
 
 // export default getRandomPerson()
 
-async function imprimir() {
-    let resultado = await getRandomPerson()
-
-    console.log(resultado)
-}
-
-imprimir()
 
 
