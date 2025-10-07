@@ -1,0 +1,28 @@
+#container {
+    height: 100vh;
+    width: auto;
+    border: solid;
+    border-color: black;
+    border-width: 5px;
+    padding: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-center {
+    border: 5px solid red;
+    flex: 0 1 50%;
+    height: 60%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+}
+
+.container-center > :nth-child(1) {
+    border: 2px solid black;
+    background-color: darkgreen;
+    flex: 0 1 20%;
+    height: 25%;
+    width: 20%;
+}
