@@ -14,9 +14,7 @@
     border: 5px solid red;
     flex: 0 1 50%;
     height: 60%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: start;
+    position: relative;
 }
 
 .container-center > :nth-child(1) {
@@ -25,4 +23,6 @@
     flex: 0 1 20%;
     height: 25%;
     width: 20%;
+    position: absolute;
+    transition: top 10s ease, left 10s ease;
 }

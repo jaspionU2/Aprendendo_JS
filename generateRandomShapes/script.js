@@ -3,31 +3,31 @@ const cube = document.querySelector("#cube")
 
 const boxStyleCss = window.getComputedStyle(containerCenter)
 
-const positionsToCube = {
-    "top": "flex-start",
-    "bottom": "flex-end",
-    "left": "start",
-    "right": "end"
-}
-
-
 
 cube.addEventListener("mouseenter", () => {
-    const { top, bottom, left, right } = positionsToCube;
-    const yPosition = containerCenter.style.alignItems || boxStyleCss.alignItems;
-    const xPosition = containerCenter.style.justifyContent || boxStyleCss.justifyContent;
+    const containerWidth = containerCenter.clientWidth;
+    const containerHeight = containerCenter.clientHeight;
 
-    if (yPosition == top) {
-        if (xPosition == left) {
-            containerCenter.style.alignItems = bottom
+    const cubeWidth = cube.offsetWidth;
+    const cubeHeight = cube.offsetHeight;
+
+    const positionTop = cube.style.top || boxStyleCss.top
+    const positionLeft = cube.style.left || boxStyleCss.left
+
+    console.log(`top: ${positionTop}`)
+    console.log(`left: ${positionLeft}`)
+
+    if (positionTop == "0px") {
+        if (positionLeft == "0px") {
+            cube.style.top = `${containerHeight - cubeHeight}px`
         } else {
-            containerCenter.style.justifyContent = left
+            cube.style.left = "0px"
         }
     } else {
-        if (xPosition == left) {
-            containerCenter.style.justifyContent = right
+        if (positionLeft == "0px") {
+            cube.style.left = `${containerWidth - cubeWidth}px`
         } else {
-            containerCenter.style.alignItems = top
+            cube.style.top = "0px"
         }
     }
 })
