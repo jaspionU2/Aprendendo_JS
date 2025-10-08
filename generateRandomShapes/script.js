@@ -1,8 +1,33 @@
 const containerCenter = document.querySelector(".container-center")
-console.log(containerCenter)
+const cube = document.querySelector("#cube")
 
-containerCenter.addEventListener("mouseover", () => {
-    console.log(containerCenter.style)
-    containerCenter.style.alignItems = "flex-end"
-    containerCenter.style.justifyContent = "end"
+const boxStyleCss = window.getComputedStyle(containerCenter)
+
+const positionsToCube = {
+    "top": "flex-start",
+    "bottom": "flex-end",
+    "left": "start",
+    "right": "end"
+}
+
+
+
+cube.addEventListener("mouseenter", () => {
+    const { top, bottom, left, right } = positionsToCube;
+    const yPosition = containerCenter.style.alignItems || boxStyleCss.alignItems;
+    const xPosition = containerCenter.style.justifyContent || boxStyleCss.justifyContent;
+
+    if (yPosition == top) {
+        if (xPosition == left) {
+            containerCenter.style.alignItems = bottom
+        } else {
+            containerCenter.style.justifyContent = left
+        }
+    } else {
+        if (xPosition == left) {
+            containerCenter.style.justifyContent = right
+        } else {
+            containerCenter.style.alignItems = top
+        }
+    }
 })
