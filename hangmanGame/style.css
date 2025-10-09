@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; 
+}
+
+div.container-main {
+    border: 5px solid black;
+    padding: 30px;
+    width: 100vw;
+    height: 80vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+div.container-main div.puppet {
+    border: 2px solid red;
+    flex: 1 1 auto;
+    max-width: fit-content;
+    margin-bottom: 10px;
+    padding: 0px 10px;
+}
+
+/*Cabeça do boneco*/
+div.container-main div#head {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin: 4px auto;
+}
+
+/*Tronco do boneco*/
+div.container-main div#body {
+    content: '';
+    display: block;
+    height: 140px;
+    width: 2.5px;
+    background-color: black;
+    margin: 4px auto;
+}
